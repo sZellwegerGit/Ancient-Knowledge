@@ -1,0 +1,12 @@
+{
+    "name": "AncientKnowledge",
+    "version": "0.0.1",
+    "title": "Ancient Knowledge",
+    "author": "DerLolli",
+    "factorio_version": "2.0",
+    "dependencies": [
+        "base", 
+        "space-age"
+    ],
+    "description": "This mod adds new ancient technologies that are direct upgrades to other buildings, but are still balanced."
+}
