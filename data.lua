@@ -1,6 +1,6 @@
 require "__AncientKnowledge__.prototypes.nexus-lab"
 require "__AncientKnowledge__.prototypes.pylon"
 require "__AncientKnowledge__.prototypes.ancient-forge"
+require "__AncientKnowledge__.prototypes.intermediate-items"
 require "__AncientKnowledge__.prototypes.recipes"
 -- require "__AncientKnowledge__.prototypes.techonlogies"
-require "__AncientKnowledge__.prototypes.intermediate-items"

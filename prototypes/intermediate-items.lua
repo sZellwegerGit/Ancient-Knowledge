@@ -12,6 +12,21 @@ local ancient_sub_group = {
     order = "q"
 }
 
+local ancient_waste = {
+    type = "item",
+    name = "ancient-waste",
+    icon = "__AncientKnowledge__/graphics/items/ancient-waste.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 50,
+    default_import_location = null,
+    weight = 10 * kg,
+	enabled = true,
+}
+
 local ancient_scrap = {
     type = "item",
     name = "ancient-scrap",
@@ -29,7 +44,7 @@ local ancient_scrap = {
 
 local ancient_plate = {
     type = "item",
-    name = "ancient-plate",
+    name = "forgotten-alloy",
     icon = "__AncientKnowledge__/graphics/items/ancient-plate.png",
     icon_size = 64,
     subgroup = "ancient-processes",
@@ -42,25 +57,27 @@ local ancient_plate = {
 	enabled = true,
 }
 
-local ancient_engine = {
+local ancient_plate_heated = {
     type = "item",
-    name = "ancient-engine",
-    icon = "__AncientKnowledge__/graphics/items/ancient-engine-unit.png",
+    name = "forgotten-alloy-heated",
+    icon = "__AncientKnowledge__/graphics/items/ancient-plate-heated.png",
     icon_size = 64,
     subgroup = "ancient-processes",
     -- order = "z[z-nexus-lab]",
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
-    stack_size = 20,
+    stack_size = 50,
     default_import_location = null,
-    weight = 100 * kg,
+    weight = 20 * kg,
 	enabled = true,
+	spoil_ticks = 60 * 60 * 5,
+	spoil_result = "forgotten-alloy",
 }
 
-local ancien1t_crystal = {
+local ancient_wire = {
     type = "item",
-    name = "ancient-crystal",
-    icon = "__AncientKnowledge__/graphics/items/ancient-crystal.png",
+    name = "relic-conduit",
+    icon = "__AncientKnowledge__/graphics/items/relic-conduit.png",
     icon_size = 64,
     subgroup = "ancient-processes",
     -- order = "z[z-nexus-lab]",
@@ -72,9 +89,26 @@ local ancien1t_crystal = {
 	enabled = true,
 }
 
-local ancien1t_steel = {
+local ancient_wire_heated = {
     type = "item",
-    name = "ancient-steel",
+    name = "relic-conduit-heated",
+    icon = "__AncientKnowledge__/graphics/items/relic-conduit-heated.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 50,
+    default_import_location = null,
+    weight = 20 * kg,
+	enabled = true,
+	spoil_ticks = 60 * 60 * 5,
+	spoil_result = "relic-conduit",
+}
+
+local ancient_steel = {
+    type = "item",
+    name = "mystic-steel",
     icon = "__AncientKnowledge__/graphics/items/ancient-steel.png",
     icon_size = 64,
     subgroup = "ancient-processes",
@@ -83,8 +117,187 @@ local ancien1t_steel = {
     drop_sound = item_sounds.resource_inventory_move,
     stack_size = 20,
     default_import_location = null,
+    weight = 100 * kg,
+	enabled = true,
+}
+
+local ancient_steel_heated = {
+    type = "item",
+    name = "mystic-steel-heated",
+    icon = "__AncientKnowledge__/graphics/items/ancient-steel-heated.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 20,
+    default_import_location = null,
+    weight = 100 * kg,
+	enabled = true,
+	spoil_ticks = 60 * 60 * 5,
+	spoil_result = "mystic-steel",
+}
+
+local ancient_engine = {
+    type = "item",
+    name = "ancient-engine",
+    icon = "__AncientKnowledge__/graphics/items/ancient-engine-unit.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 10,
+    default_import_location = null,
     weight = 200 * kg,
 	enabled = true,
 }
 
-data:extend({ancient_sub_group, ancient_scrap, ancient_plate, ancient_engine, ancien1t_crystal, ancien1t_steel})
+local explosionEffect = table.deepcopy(data.raw.explosion["big-explosion"])
+
+explosionEffect.name = "ancient-explosion"
+explosionEffect.icons = {
+  { icon = "__base__/graphics/icons/explosion.png" },
+}
+
+local explosion_trigger_result = {
+  items_per_trigger = 1,
+  trigger = {
+    type = "direct",
+    action_delivery = {
+      type = "instant",
+      target_effects = {
+        {
+          type = "create-explosion",
+          entity_name = "ancient-explosion",
+        },
+        {
+          type = "nested-result",
+          action = {
+            type = "area",
+            radius = 4,
+            target_entities = true,
+            action_delivery = {
+              type = "instant",
+              target_effects = {
+                {
+                  type = "damage",
+                  damage = {
+                    amount = 1500,
+                    type = "explosion",
+                  },
+                  apply_damage_to_trees = true,
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+local ancient_reactor = {
+    type = "item",
+    name = "arc-reactor",
+    icon = "__AncientKnowledge__/graphics/items/arc-reactor.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 5,
+    default_import_location = null,
+    weight = 200 * kg,
+	enabled = true,
+	spoil_ticks = 60 * 60 * 10,
+	spoil_to_trigger_result = explosion_trigger_result,
+}
+
+local ancient_energy_vault = {
+    type = "item",
+    name = "ancient-energy-vault",
+    icon = "__AncientKnowledge__/graphics/items/ancient-energy-vault.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 5,
+    default_import_location = null,
+    weight = 200 * kg,
+	enabled = true,
+	spoil_ticks = 60 * 60 * 10,
+	spoil_to_trigger_result = explosion_trigger_result,
+}
+
+local ancient_chip = {
+    type = "item",
+    name = "void-tech-chip",
+    icon = "__AncientKnowledge__/graphics/items/void-tech-chip.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 100,
+    default_import_location = null,
+    weight = 20 * kg,
+	enabled = true,
+}
+
+local ancient_heat_cell = {
+    type = "item",
+    name = "ancient-heat-cell",
+    icon = "__AncientKnowledge__/graphics/items/ancient-heated-cell.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 10,
+    default_import_location = null,
+    weight = 100 * kg,
+	enabled = true,
+	spoil_ticks = 60 * 60,
+	spoil_result = "ancient-waste",
+}
+
+local ancient_shards = {
+    type = "item",
+    name = "ancient-crystal-shards",
+    icon = "__AncientKnowledge__/graphics/items/ancient-shards.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 100,
+    default_import_location = null,
+    weight = 20 * kg,
+	enabled = true,
+}
+
+local ancient_crystal = {
+    type = "item",
+    name = "ancient-crystal",
+    icon = "__AncientKnowledge__/graphics/items/ancient-crystal.png",
+    icon_size = 64,
+    subgroup = "ancient-processes",
+    -- order = "z[z-nexus-lab]",
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 20,
+    default_import_location = null,
+    weight = 50 * kg,
+	enabled = true,
+}
+
+data:extend({
+	ancient_sub_group, explosionEffect,
+	ancient_waste, ancient_scrap, ancient_plate, ancient_plate_heated, 
+	ancient_wire, ancient_wire_heated, ancient_steel, ancient_steel_heated, 
+	ancient_engine, ancient_reactor, ancient_energy_vault,
+	ancient_chip, ancient_heat_cell,
+	ancient_shards, ancient_crystal,
+})
