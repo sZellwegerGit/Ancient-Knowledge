@@ -37,9 +37,44 @@ local atomic_artillery_shell ={
 	pick_sound = item_sounds.artillery_large_inventory_pickup,
 	drop_sound = item_sounds.artillery_large_inventory_move,
 	stack_size = 1,
-	weight = 500*kg
+	weight = 1000*kg
+}
+
+local biter_artillery_shell ={
+	type = "ammo",
+	name = "biter-artillery-shell",
+	icon = "__AncientKnowledge__/graphics/items/biter-shell.png",
+	ammo_category = "artillery-shell",
+	ammo_type =
+	{
+	  target_type = "position",
+	  action =
+	  {
+		type = "direct",
+		action_delivery =
+		{
+		  type = "artillery",
+		  projectile = "biter-artillery-projectile",
+		  starting_speed = 1,
+		  direction_deviation = 0,
+		  range_deviation = 0,
+		  source_effects =
+		  {
+			type = "create-explosion",
+			entity_name = "artillery-cannon-muzzle-flash"
+		  }
+		}
+	  }
+	},
+	subgroup = "ammo",
+	order = "d[explosive-cannon-shell]-e[artillery]",
+	inventory_move_sound = item_sounds.artillery_large_inventory_move,
+	pick_sound = item_sounds.artillery_large_inventory_pickup,
+	drop_sound = item_sounds.artillery_large_inventory_move,
+	stack_size = 1,
+	weight = 1000*kg
 }
 
 data:extend({
-	atomic_artillery_shell
+	atomic_artillery_shell, biter_artillery_shell
 })

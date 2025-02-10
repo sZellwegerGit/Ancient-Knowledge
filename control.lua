@@ -12,6 +12,24 @@ local function replace_scrap_with_ancient_scrap(event)
 	end
 end
 
+local function replace_biters_from_artillery_with_quality(event)
+	if event.source.name == "biter-artillery-projectile" then
+		if event.source.quality ~= "normal" then
+			local enemy = event.entity
+			local enemy_pos = enemy.position
+			local enemy_surface = enemy.surface.name
+			local enemy_quality = enemy.quality.name
+			local enemy_type = enemy_quality.."-"..enemy.name
+			enemy.destroy({raise_destroy = false})
+			game.surfaces[enemy_surface].create_entity({name = enemy_type, quality = enemy_quality, position = enemy_pos})	
+		end
+	end
+end
+
 script.on_event(defines.events.on_chunk_generated, function(event)
 	replace_scrap_with_ancient_scrap(event)
+end)
+
+script.on_event(defines.events.on_trigger_created_entity, function(event)
+	replace_biters_from_artillery_with_quality(event)
 end)
