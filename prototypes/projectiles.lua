@@ -188,7 +188,7 @@ local biter_artillery_projectile = {
 		  },
 		  {
 			  type = "create-entity",
-			  entity_name = "big-biter",
+			  entity_name = "friendly-biter",
 			  as_enemy = false,
 			  offset_deviation = {{-1, -1}, {1, 1}},
 			  repeat_count = 6,

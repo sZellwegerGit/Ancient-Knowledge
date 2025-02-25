@@ -26,7 +26,7 @@ local pylon = {
     },
     minable = {
         mining_time = 1.0,
-        result = "ancient-forge"
+        result = "pylon"
     },
     max_health = 800,
     corpse = "big-remnants",
