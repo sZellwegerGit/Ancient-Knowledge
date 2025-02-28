@@ -1,3 +1,75 @@
+local transport_belt_capacity_3 = {
+	type = "technology",
+	name = "transport-belt-capacity-3",
+	localised_description = {"technology-description.belt-capacity"},
+	icons = util.technology_icon_constant_stack_size("__space-age__/graphics/technology/transport-belt-capacity.png"),
+	effects =
+	{
+	  {
+		type = "belt-stack-size-bonus",
+		modifier = 1
+	  },
+	  {
+		type = "inserter-stack-size-bonus",
+		modifier = 1
+	  }
+	},
+	prerequisites = {"metallurgic-science-pack", "transport-belt-capacity-2"},
+	unit =
+	{
+	  count = 8000,
+	  ingredients =
+	  {
+		{"automation-science-pack",      1},
+		{"logistic-science-pack",        1},
+		{"chemical-science-pack",        1},
+		{"production-science-pack",      1},
+		{"utility-science-pack",         1},
+		{"space-science-pack",           1},
+		{"metallurgic-science-pack", 	 1},
+		{"agricultural-science-pack",    1}
+	  },
+	  time = 60
+	},
+	upgrade = true
+}
+
+local transport_belt_capacity_4 = {
+	type = "technology",
+	name = "transport-belt-capacity-4",
+	localised_description = {"technology-description.belt-capacity"},
+	icons = util.technology_icon_constant_stack_size("__space-age__/graphics/technology/transport-belt-capacity.png"),
+	effects =
+	{
+	  {
+		type = "belt-stack-size-bonus",
+		modifier = 1
+	  },
+	  {
+		type = "inserter-stack-size-bonus",
+		modifier = 1
+	  }
+	},
+	prerequisites = {"metallurgic-science-pack", "transport-belt-capacity-2"},
+	unit =
+	{
+	  count = 20000,
+	  ingredients =
+	  {
+		{"automation-science-pack",      1},
+		{"logistic-science-pack",        1},
+		{"chemical-science-pack",        1},
+		{"production-science-pack",      1},
+		{"utility-science-pack",         1},
+		{"space-science-pack",           1},
+		{"metallurgic-science-pack", 	 1},
+		{"agricultural-science-pack",    1}
+	  },
+	  time = 60
+	},
+	upgrade = true
+}
+
 local research_speed_7 = {
 	type = "technology",
 	name = "research-speed-7",

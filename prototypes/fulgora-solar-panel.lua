@@ -61,7 +61,7 @@ local fulgora_solar_panel = {
     dying_explosion = "solar-panel-explosion",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    damaged_trigger_effect = hit_effects.entity(),
+    damaged_trigger_effect = nil, --hit_effects.entity(),
     energy_source =
     {
       type = "electric",
@@ -105,7 +105,7 @@ local fulgora_solar_panel = {
       }
     },
     impact_category = "glass",
-    production = "120kW"
+    production = "150kW"
 }
 
 data:extend{

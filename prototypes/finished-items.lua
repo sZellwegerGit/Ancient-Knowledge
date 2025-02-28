@@ -40,7 +40,7 @@ local fulogra_personal_solar_panel = {
 	  type = "electric",
 	  usage_priority = "primary-output"
 	},
-	power = "60kW",
+	power = "75kW",
 	categories = {"armor"}
 }
 
@@ -115,7 +115,7 @@ local personal_laser_defense_mk2 = {
 local biter_pet_equipment_item = {
 	type = "item",
 	name = "biter-pet-equipment",
-	icon = "__base__/graphics/icons/night-vision-equipment.png",
+	icon = "__AncientKnowledge__/graphics/items/biter-pet-equipment.png",
 	place_as_equipment_result = "biter-pet-equipment",
     subgroup = "military-equipment",
     order = "b[active-defense]-c[biter-pet-equipment]",
@@ -132,7 +132,7 @@ local biter_pet_equipment = {
 	name = "biter-pet-equipment",
 	sprite =
 	{
-	  filename = "__base__/graphics/equipment/night-vision-equipment.png",
+	  filename = "__AncientKnowledge__/graphics/equipment/biter-pet-equipment.png",
 	  width = 128,
 	  height = 128,
 	  priority = "medium",
