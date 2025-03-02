@@ -1,3 +1,10 @@
+Version: 0.1.1
+  Features:
+    - Changed Rapid Rocket Launcher icon
+    - Changed captive-biter-spawner requirement to captivity
+Version: 0.1.0
+  Features:
+    - Initial Public release
 Version: 0.0.1
   Features:
     - Initial release

@@ -182,8 +182,7 @@ local refreshment_extract_recipe = {
 	category = "refreshing-process",
 	subgroup = "refreshing-process",
 	order = "a",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "raw-fish", amount = 1},
@@ -192,7 +191,7 @@ local refreshment_extract_recipe = {
 	energy_required = 3,
 	results =
 	{
-		{type = "item", name = "refreshment-extract", amount = 5},
+		{type = "item", name = "refreshment-extract", amount = 3},
 	},
 	allow_productivity = true,
 	allow_decomposition = false,
@@ -221,8 +220,7 @@ local nutrient_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "b",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "nutrients", amount = refreshment_ingrediant_required},
@@ -258,8 +256,7 @@ local yumako_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "c",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "yumako", amount = refreshment_ingrediant_required},
@@ -295,8 +292,7 @@ local jellynut_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "d",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "jellynut", amount = refreshment_ingrediant_required},
@@ -332,8 +328,7 @@ local bioflux_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "e",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "refreshment-extract", amount = 1},
@@ -369,8 +364,7 @@ local yumako_mesh_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "f",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "yumako-mash", amount = refreshment_ingrediant_required},
@@ -406,8 +400,7 @@ local jelly_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "jelly", amount = refreshment_ingrediant_required},
@@ -443,8 +436,7 @@ local agricultural_science_pack_refreshment = {
 	category = "refreshing-process",
 	subgroup="refreshing-process",
 	order = "h",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "agricultural-science-pack", amount = refreshment_ingrediant_required},

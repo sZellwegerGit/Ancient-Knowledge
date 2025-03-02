@@ -30,8 +30,7 @@ local ancient_scrap_extraction_recipe ={
 	subgroup="space-crushing",
 	order = "b-a-a",
 	auto_recycle = false,
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "promethium-asteroid-chunk", amount = 5},
@@ -39,9 +38,9 @@ local ancient_scrap_extraction_recipe ={
 	energy_required = 5,
 	results =
 	{
-		{type = "item", name = "stone", amount = 25},
-		{type = "item", name = "promethium-asteroid-chunk", amount = 1, probability = 0.15},
-		{type = "item", name = "ancient-scrap", amount = 1, probability = 0.01},
+		{type = "item", name = "stone", amount = 15},
+		{type = "item", name = "promethium-asteroid-chunk", amount = 1, probability = 0.1},
+		{type = "item", name = "ancient-scrap", amount = 1, probability = 0.04},
 	},
 	allow_productivity = true,
 	allow_decomposition = false
@@ -58,9 +57,8 @@ local evolved_dust = {
 	icon = "__AncientKnowledge__/graphics/items/power-nutrients.png",
 	category = "ancient-processing",
 	subgroup = "ancient-processes",
-	order = "f",
-	-- enabled = false,
-	enabled = true,
+	order = "a",
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "ancient-scrap", amount = 1},
@@ -83,9 +81,8 @@ local evolved_biter_egg = {
 	icon = "__AncientKnowledge__/graphics/items/evolved-biter-egg.png",
 	category = "ancient-processing",
 	subgroup = "ancient-processes",
-	order = "f",
-	-- enabled = false,
-	enabled = true,
+	order = "b",
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "ancient-scrap", amount = 1},
@@ -108,9 +105,8 @@ local living_processor = {
 	icon = "__AncientKnowledge__/graphics/items/living-processor.png",
 	category = "ancient-processing",
 	subgroup = "ancient-processes",
-	order = "f",
-	-- enabled = false,
-	enabled = true,
+	order = "c",
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "processing-unit", amount = 1},
@@ -134,8 +130,7 @@ local obsidian = {
 	category = "metallurgy",
 	subgroup = "ancient-processes",
 	order = "b[casting]-g[casting-obsidian]",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
     {
       {type = "fluid", name = "lava", amount = 150},
@@ -159,8 +154,7 @@ local demolisher_egg = {
 	category = "metallurgy",
 	subgroup = "ancient-processes",
 	order = "b[casting]-h[demolisher-egg]",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
     {
       {type = "fluid", name = "lava", amount = 4000},
@@ -185,8 +179,7 @@ local chrono_relay = {
 	category = "electromagnetics",
 	subgroup = "ancient-processes",
 	order = "b[holmium]-e[chrono-relay]",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
     {
       {type = "item", name = "obsidian", amount = 4},
@@ -210,8 +203,7 @@ local mutagenic_compound = {
     category = "organic",
     subgroup = "agriculture-products",
     order = "a[organic-products]-c[mutagenic-compound]",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
     {
 	  {type = "fluid", name = "sulfuric-acid", amount = 50},
@@ -235,8 +227,7 @@ local glacium_crystal = {
 	category = "cryogenics",
 	subgroup = "ancient-processes",
 	order = "c[lithium]-d[glacium-crystal]",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
     {
 	  {type = "fluid", name = "fluoroketone-cold", amount = 40},
@@ -260,8 +251,7 @@ local cryo_core = {
 	category = "cryogenics",
 	subgroup = "ancient-processes",
 	order = "c[lithium]-e[cryo-core]",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
     {
 	  {type = "item", name = "glacium-crystal", amount = 4},
@@ -285,14 +275,12 @@ local refresher = {
 	category = "organic",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	
 	ingredients =
 	{
 	  {type = "fluid", name = "water", amount = 500},
-	  {type = "item", name = "biter-egg", amount = 1},
-	  {type = "item", name = "tungsten-plate", amount = 20},
+	  {type = "item", name = "carbon-fiber", amount = 20},
 	  {type = "item", name = "processing-unit", amount = 40},
 	  {type = "item", name = "electric-engine-unit", amount = 15}
 	},
@@ -311,8 +299,7 @@ local fulgora_solar_panel = {
 	icon = "__AncientKnowledge__/graphics/items/fulgora-solar-panel.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,	
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "solar-panel", amount = 1},
@@ -334,8 +321,7 @@ local living_accumulator = {
 	icon = "__AncientKnowledge__/graphics/items/living-accumulator.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "accumulator", amount = 1},
@@ -358,8 +344,7 @@ local fulgora_solar_panel_equipment = {
 	icon = "__AncientKnowledge__/graphics/items/fulgora-solar-panel-equipment.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "fulgora-solar-panel", amount = 1},
@@ -381,8 +366,7 @@ local personal_laser_defense_equipment_mk2 = {
 	icon = "__AncientKnowledge__/graphics/items/personal-laser-defense-equipment-mk2.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "personal-laser-defense-equipment", amount = 1},
@@ -404,8 +388,7 @@ local biter_pet_equipment = {
 	icon = "__AncientKnowledge__/graphics/items/biter-pet-equipment.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "personal-roboport-mk2-equipment", amount = 1},
@@ -428,8 +411,7 @@ local rapid_rocket_launcher = {
 	icon = "__AncientKnowledge__/graphics/items/rapid-rocket-launcher.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "rocket-launcher", amount = 4},
@@ -452,8 +434,7 @@ local atomic_artillery_shell = {
 	icon = "__AncientKnowledge__/graphics/items/atomic-shell.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "artillery-shell", amount = 2},
@@ -475,8 +456,7 @@ local biter_artillery_shell = {
 	icon = "__AncientKnowledge__/graphics/items/biter-shell.png",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	ingredients =
 	{
 	  {type = "item", name = "artillery-shell", amount = 3},
@@ -499,8 +479,7 @@ local nexus_lab_recipe = {
 	category = "electromagnetics",
 	subgroup="ancient-processes",
 	order = "g",
-	-- enabled = false,
-	enabled = true,
+	enabled = false,
 	
 	ingredients =
 	{
@@ -526,9 +505,7 @@ local pylon_recipe = {
 	category = "electromagnetics",
 	subgroup="ancient-processes",
 	order = "h",
-	-- enabled = false,
-	enabled = true,
-	
+	enabled = false,
 	
 	ingredients =
 	{
