@@ -411,7 +411,7 @@ local pylon = {
 	{
 		{
 			type = "unlock-recipe",
-			recipe = "nexus-lab"
+			recipe = "pylon"
 		}
 	},
     prerequisites = {"ancient-processing"},

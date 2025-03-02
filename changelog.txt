@@ -1,3 +1,6 @@
+Version: 0.1.2
+  Features:
+    - Fixed a bug where the pylon technology unlocks the nexus-lab
 Version: 0.1.1
   Features:
     - Changed Rapid Rocket Launcher icon
