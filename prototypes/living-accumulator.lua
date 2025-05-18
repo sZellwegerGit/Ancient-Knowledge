@@ -129,10 +129,10 @@ local living_accumulator = {
 	energy_source =
 	{
 	  type = "electric",
-	  buffer_capacity = "12MJ",
+	  buffer_capacity = "15MJ",
 	  usage_priority = "tertiary",
-	  input_flow_limit = "700kW",
-	  output_flow_limit = "700kW"
+	  input_flow_limit = "800kW",
+	  output_flow_limit = "800kW"
 	},
 	chargable_graphics =
 	{

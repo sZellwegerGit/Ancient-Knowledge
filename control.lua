@@ -19,15 +19,17 @@
 --end
 
 local function replace_biters_from_artillery_with_quality(event)
-	if event.source.name == "biter-artillery-projectile" then
-		if event.source.quality ~= "normal" then
-			local enemy = event.entity
-			local enemy_pos = enemy.position
-			local enemy_surface = enemy.surface.name
-			local enemy_quality = enemy.quality.name
-			local enemy_type = enemy_quality.."-"..enemy.name
-			enemy.destroy({raise_destroy = false})
-			game.surfaces[enemy_surface].create_entity({name = enemy_type, quality = enemy_quality, position = enemy_pos})	
+	if event.source ~= nil then
+		if event.source.name == "biter-artillery-projectile" then
+			if event.source.quality ~= "normal" then
+				local enemy = event.entity
+				local enemy_pos = enemy.position
+				local enemy_surface = enemy.surface.name
+				local enemy_quality = enemy.quality.name
+				local enemy_type = enemy_quality.."-"..enemy.name
+				enemy.destroy({raise_destroy = false})
+				game.surfaces[enemy_surface].create_entity({name = enemy_type, quality = enemy_quality, position = enemy_pos})	
+			end
 		end
 	end
 end

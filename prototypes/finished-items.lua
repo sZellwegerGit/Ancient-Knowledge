@@ -154,14 +154,14 @@ local biter_pet_equipment = {
 	attack_parameters =
 	{
 	  type = "beam",
-	  cooldown = 600,
-	  range = 4,
+	  cooldown = 400,
+	  range = 10,
 	  range_mode = "center-to-bounding-box",
 	  damage_modifier = 0.0,
 	  ammo_category = "laser",
 	  ammo_type =
 	  {
-		energy_consumption = "6MJ",
+		energy_consumption = "5MJ",
 		action =
 		{
 		  type = "direct",

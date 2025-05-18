@@ -105,7 +105,7 @@ local fulgora_solar_panel = {
       }
     },
     impact_category = "glass",
-    production = "150kW"
+    production = "200kW"
 }
 
 data:extend{

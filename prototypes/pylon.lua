@@ -69,15 +69,15 @@ local pylon = {
     },
     collision_box = {
         {-1.4, -1}, 
-        {1.4, 2}, 
+        {1.4, 1.8}, 
     },
     selection_box = {
         {-1.4, -1}, 
-        {1.4, 2}, 
+        {1.4, 1.8}, 
     },
     drawing_box = {
         {-1.4, -1}, 
-        {1.4, 2}, 
+        {1.4, 1.8}, 
     },
 	graphics_set = {
 		animation_list = {
@@ -142,10 +142,10 @@ local pylon = {
     },
 	allowed_effects = {"productivity", "quality", "pollution"},
 	module_slots = 2,
-    energy_usage = "4000kW",
+    energy_usage = "10MW",
 	supply_area_distance = 3,
 	distribution_effectivity = 0.3,
-	distribution_effectivity_bonus_per_quality_level = 0.06
+	distribution_effectivity_bonus_per_quality_level = 0.05
 }
 
 data:extend{item, pylon}

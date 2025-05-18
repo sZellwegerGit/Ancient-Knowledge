@@ -319,14 +319,6 @@ local ancient_processing = {
 		},
 		{
 			type = "unlock-recipe",
-			recipe = "evolved-biter-egg"
-		},
-		{
-			type = "unlock-recipe",
-			recipe = "living-processor"
-		},
-		{
-			type = "unlock-recipe",
 			recipe = "casting-obsidian"
 		},
 		{
@@ -335,15 +327,11 @@ local ancient_processing = {
 		},
 		{
 			type = "unlock-recipe",
+			recipe = "demolisher-egg-to-nutrients"
+		},
+		{
+			type = "unlock-recipe",
 			recipe = "chrono-relay"
-		},
-		{
-			type = "unlock-recipe",
-			recipe = "mutagenic-compound"
-		},
-		{
-			type = "unlock-recipe",
-			recipe = "glacium-crystal"
 		},
 		{
 			type = "unlock-recipe",
@@ -385,7 +373,7 @@ local nexus_lab = {
     prerequisites = {"ancient-processing"},
     unit =
     {
-      count = 100000,
+      count = 75000,
       ingredients = {
 		{"automation-science-pack", 1},
 		{"logistic-science-pack", 1},
@@ -417,7 +405,7 @@ local pylon = {
     prerequisites = {"ancient-processing"},
     unit =
     {
-      count = 100000,
+      count = 75000,
       ingredients = {
 		{"automation-science-pack", 1},
 		{"logistic-science-pack", 1},

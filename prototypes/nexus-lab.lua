@@ -41,7 +41,7 @@ local nexusLab = {
     },
     icons_positioning = {
         {
-            inventory_index = defines.inventory.assembling_machine_modules, shift = {0, 1}
+            inventory_index = defines.inventory.lab_modules, shift = {0, -0.5}
         },
     },
     vehicle_impact_sound =  { 
@@ -179,15 +179,15 @@ local nexusLab = {
 		"cryogenic-science-pack",
 		"promethium-science-pack",
     },
-    researching_speed = 3,
-	science_pack_drain_rate_percent = 35,
-	allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    researching_speed = 3.0,
+	science_pack_drain_rate_percent = 40,
+	allowed_effects = {"speed", "productivity", "pollution"},
 	module_slots = 5,
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
     },
-    energy_usage = "2MW",    
+    energy_usage = "12MW",    
     match_animation_speed_to_activity = true,
 }
 

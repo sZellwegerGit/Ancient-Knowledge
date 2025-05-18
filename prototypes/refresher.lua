@@ -30,8 +30,6 @@ local refreshment_extract = {
     default_import_location = null,
     weight = 10 * kg,
 	enabled = true,
-	spoil_ticks = 60 * 60 * 180,
-	spoil_result = "spoilage",
 }
 
 local item = {
@@ -185,20 +183,19 @@ local refreshment_extract_recipe = {
 	enabled = false,
 	ingredients =
 	{
-	  {type = "item", name = "raw-fish", amount = 1},
-	  {type = "item", name = "bioflux", amount = 1},
+	  {type = "item", name = "jelly", amount = 5},
+	  {type = "item", name = "bioflux", amount = 3},
 	},
-	energy_required = 3,
+	energy_required = 5,
 	results =
 	{
-		{type = "item", name = "refreshment-extract", amount = 3},
+		{type = "item", name = "refreshment-extract", amount = 2},
 	},
 	allow_productivity = true,
-	allow_decomposition = false,
-	result_is_always_fresh = true
+	allow_decomposition = false
 }
 
-local refreshment_ingrediant_required = 10
+local refreshment_ingrediant_required = 50
 
 local nutrient_refreshment = {
 	type = "recipe",
@@ -226,7 +223,7 @@ local nutrient_refreshment = {
 	  {type = "item", name = "nutrients", amount = refreshment_ingrediant_required},
 	  {type = "item", name = "refreshment-extract", amount = 1},
 	},
-	energy_required = 0.5,
+	energy_required = 1,
 	results =
 	{
 		{type = "item", name = "nutrients", amount = refreshment_ingrediant_required},

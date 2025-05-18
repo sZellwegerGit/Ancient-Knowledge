@@ -1,10 +1,19 @@
+Version: 0.2.0
+  Features:
+    - Fixed: a bug where the game would crash if source is nil
+	- Fixed: a bug where the game would try to replace research speed technology from other mods
+	- Changed: some items though still not perfect
+	- Changed: Research tree for research speed
+	- Rebalanced: Nearly all items/entities and recipes
+	- Removed: Unnecessary items that didn't add anything special to the mod
+	- Info!: Already researched "Research Speed" technology needs to be researched again after updating
 Version: 0.1.2
   Features:
-    - Fixed a bug where the pylon technology unlocks the nexus-lab
+    - Fixed: a bug where the pylon technology unlocks the nexus-lab
 Version: 0.1.1
   Features:
-    - Changed Rapid Rocket Launcher icon
-    - Changed captive-biter-spawner requirement to captivity
+    - Changed: Rapid Rocket Launcher icon
+    - Changed: captive-biter-spawner requirement to captivity
 Version: 0.1.0
   Features:
     - Initial Public release
